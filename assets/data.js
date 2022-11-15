@@ -136,6 +136,4 @@ const productsData = [
 
 
 
- console.log(productsData);
-
 

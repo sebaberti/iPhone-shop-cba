@@ -13,6 +13,7 @@ const cartBtn = document.querySelector(".cart-label");
 const overlay = document.querySelector(".overlay");
 const deleteBtn = document.querySelector(".btn-delete");
 const successModal = document.querySelector(".add-modal");
+const cartMenu = document.querySelector(".cart");
 
 // setear el array para el carro
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -115,6 +116,27 @@ const renderDivededProducts = (index = 0) =>{
   }
 };
 
+//logica para abrir y cerrar el carrito y mostrar el overlay
+
+const togleMenu = () =>{
+  barsMenu.classList.toggle(`open-menu`);
+  if(cartMenu.classList.contains("open-cart")){
+    cartMenu.classList.remove("open-cart");
+    return;
+  }
+  overlay.classList,toggle("show-overlay");
+  };
+
+
+  const toggleCart = () => {
+    cartMenu.classList.toggle("open-cart");
+    if(barsMenu.classList.contains("open-menu")){
+      barsMenu.classList.remove("open-menu");
+      return;
+    }
+    overlay.classList.toggle("show-overlay");
+  };
+
 
 
 
@@ -136,20 +158,16 @@ const renderDivededProducts = (index = 0) =>{
    })
 
 
-  const togleMenu = () =>{
-    barsMenu.classList.toggle(`open-menu`);
-    };
-
   
     
     
     
     const init = () => {
-        barsBtn.addEventListener("click",togleMenu);
         renderProducts();
          categories.addEventListener("click", applyFilter);
          btnLoad.addEventListener("click", showMoreProducts);
-
+         barsBtn.addEventListener("click",togleMenu);
+        cartBtn.addEventListener("click",toggleCart);
     };
     
     init();
