@@ -11,7 +11,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 60px;
 }
 
 body {
@@ -132,6 +132,26 @@ header {
   transform: scaleX(1);
 }
 
+.overlay {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1; /*Para que quede por encima del resto de las cosas*/
+
+  /*Efecto de Glassmorphismo*/
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: none;
+}
+
+.show-overlay {
+  display: block;
+}
+
 /* carrito */
 .cart {
   position: absolute;
@@ -162,7 +182,7 @@ header {
 }
 
 .cart h2 {
-  color: var(--text-white);
+  color: aliceblue;
   font-size: 20px;
   font-weight: 600;
 }
@@ -174,7 +194,7 @@ header {
   gap: 20px;
   background-color: #2323234e;
   padding: 20px;
-  border: 1px solid var(--electric);
+  border: 1px solid blue;
   border-radius: 10px;
 }
 
@@ -190,15 +210,9 @@ header {
 }
 
 .item-title {
-  color: var(--text-white);
+  color: aliceblue;
   font-weight: 600;
   font-size: 14px;
-}
-
-.item-bid {
-  color: var(--text-gray);
-  font-weight: 300;
-  font-size: 12px;
 }
 
 .item-price {
@@ -210,39 +224,32 @@ header {
   font-weight: 800;
 }
 
-.item-handler {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
 .quantity-handler {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2px 8px;
   border-radius: 5px;
-  color: var(--text-white);
+  color: aliceblue;
   font-weight: 400;
 }
 
 .item-quantity {
-  color: var(--text-gray);
+  color: black;
 }
 
 .up {
-  border: 1px solid var(--electric);
+  border: 1px solid blue;
 }
 
 .down {
-  background-color: var(--secondary);
-  border: 1px solid var(--electric);
+  background-color: blue;
+  border: 1px solid blue;
 }
 
 .divider {
   margin-top: 20px;
-  border: 0.5px solid var(--electric);
+  border: 0.5px solid gray;
   width: 100%;
 }
 
@@ -254,12 +261,12 @@ header {
 }
 
 .cart-total p {
-  color: var(--text-white);
+  color: black;
   font-weight: 700;
 }
 
 .cart-total span {
-  color: var(--text-white);
+  color: black;
   font-weight: 400;
   font-size: 18px;
 }
@@ -271,7 +278,7 @@ header {
 }
 
 .empty-msg {
-  color: var(--text-gray);
+  color: green;
   font-size: 14px;
 }
 
@@ -851,4 +858,36 @@ textarea {
     text-align: center;
     line-height: 1.9rem;
   }
+}
+
+.disabled {
+  background-color: var(--text-gray);
+  color: white;
+  cursor: not-allowed;
+  border: none;
+}
+.disabled:hover {
+  background-color: var(--text-gray);
+  color: white;
+  cursor: not-allowed;
+  border: none;
+}
+
+.add-modal {
+  padding: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  background-color: green;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  transform: translateY(200%);
+}
+
+.active-modal {
+  transform: translateY(0);
+  transition: all 0.5s ease-in;
 }
