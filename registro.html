@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="registro.css" />
+    <link rel="icon" href="./assets/img/hero/logo.png" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
+    <title>Registro</title>
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+              <a href="./index.html"><img src="./assets/img/hero/logo.png" alt="logo" class="logo" />
+              </div>
+                <nav class="navbar">
+                  <div class="navbar-list">
+                   <div class="redes">
+                <a href="https://www.instagram.com/iphone_shopcba/"> <i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/seba.berti.9"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://twitter.com/SebaBerti5"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+                    </div>
+                  </header>
+    <div class="registro">
+      <div class="reg-text">
+        <h1>Crear Cuenta</h1>
+      </div>
+      <form action="">
+        <div class="formulario">
+          <li>
+            <label for="nombre">Nombre y Apellido</label>
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Ej.: Juan Perez"
+              required
+            />
+          </li>
+          <li>
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              placeholder="Ej.: juanperez@email.com"
+              required
+            />
+          </li>
+          <li>
+            <label for="telefono">Teléfono (opcional)</label>
+            <input type="tel" id="telefono" placeholder="Ej.: 4444-4444" />
+          </li>
+          <li>
+            <label for="contraseña">Contraseña</label>
+            <input type="password" id="contraseña" required />
+          </li>
+          <li>
+            <label for="confirma-contra">Confirmar contraseña</label>
+            <input type="password" id="confirma-contra" required />
+          </li>
+          <li class="checkbox">
+            <div class="check">
+              <input type="checkbox" id="comunicaciones" checked />
+              <label for="comunicaciones"
+                >Quiero recibir promociones y descuentos</label
+              >
+            </div>
+            <div class="check">
+              <input type="checkbox" id="requisitos" required />
+              <label for="requisitos">Acepto terminos y condiciónes</label>
+            </div>
+          </li>
+          <li>
+            <input type="submit" value="Crear Cuenta" class="primary-button" />
+          </li>
+        </div>
+        <div class="cuenta">
+          <p>
+            ¿Ya tenés una cuenta?
+            <a href="./inicio.html">Iniciá Sesión</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

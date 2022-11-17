@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&family=Oswald:wght@200;300;400;600&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital@1&family=Open+Sans:wght@300;400;500;600;700&display=swap");
 :root {
   /* colors */
   --negro: #2a2a2a;
@@ -337,14 +337,13 @@ header {
     font-size: 18px;
   }
 
-  .register{
+  .register {
     border: 1px solid var(--blanco);
   }
   .register:hover {
     background-color: var(--blanco);
     color: var(--negro);
     transition: all 0.3s linear;
-  
   }
 
   /* muestro el icono de menu */
@@ -456,7 +455,7 @@ header {
   text-align: center;
   font-weight: 900;
   color: var(--negro);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #about-us {
@@ -497,6 +496,7 @@ header {
   font-size: 30px;
   font-weight: 300;
   text-align: center;
+  font-family: "Exo", sans-serif;
 }
 
 .primary-button {
@@ -543,6 +543,12 @@ header {
   }
 }
 
+@media (max-width: 400px) {
+  .img-container img {
+    width: 300px;
+  }
+}
+
 /* CATEGORIAS */
 .categories {
   display: flex;
@@ -564,7 +570,7 @@ header {
 .category {
   color: var(--negro);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
   border: none;
   background-color: var(--blanco);
   padding: 10px 25px;
@@ -817,6 +823,16 @@ textarea {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 370px) {
+  input {
+    width: 280px;
+  }
+
+  textarea {
+    width: 280px;
+  }
 }
 
 /* redes */
