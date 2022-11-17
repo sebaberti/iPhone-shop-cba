@@ -25,19 +25,24 @@ const saveLocalStorage = (cartList) =>{
 
 //Funcion para crear el HTML a renderizar
 const createHtml = (product)=>{
-  const { name, price, cardImg } = product;
+  const {id, name, price, image } = product;
 
     return `
     <div class="card">
-            <div class="card-img"><img src=${cardImg} alt="user"/></div>
-            <div class="card-info">
-              <h3>${name}</h3>
-              <span>$${price}</span>
-              <button class="card-btn btn-add">Agregar
-              </button>
-            </div>
-          </div>`;
+    <div class="card-img"><img src="${image}" alt="user"/></div>
+    <div class="card-info">
+      <h3>${name}</h3>
+      <span>$${price}</span>
+      <button class="card-btn btn-add"
+      data-id="${id}"
+      data-name="${name}"
+      data-price="${price}"
+      data-image="${image}">Agregar
+      </button>
+    </div>
+  </div>`;     
 };
+
 
 
 //funcion para renderizar los productos divididos.
@@ -55,6 +60,10 @@ const renderDivededProducts = (index = 0) =>{
  };
 
  //funcion para renderizar los productos
+ // Funcion para renderizar los productos
+// Recibe un index, si no le pasamos nada por default va a ser 0 y una categoria, si no le pasamos nada por default va a ser undefined
+// Si no hay categoria renderizame los productos del array dividido.
+// Si hay categoria ejecuta renderFilteredProducts
  const renderProducts = (index = 0, category = undefined)=>{
    if(!category) {
      renderDivededProducts(index);
@@ -169,11 +178,11 @@ const togleMenu = () =>{
 
   //logica del carrito
   const renderCartProduct = (cartProduct)=> {
-    const { id,name, price, cardImg, quantity } = cartProduct;
+    const { id, name, price, image, quantity } = cartProduct;
 
     return `
     <div class="cart-item">
-            <div class="img-cart"><img src=${cardImg} alt="user"/></div>
+            <div class="img-cart"><img src=${image} alt="user"/></div>
             <div class="item-info">
               <h3>${name}</h3>
               <span>$${price}</span>
@@ -184,7 +193,7 @@ const togleMenu = () =>{
       <span class="quantity-handler up" data-id=${id}>+</span>
     </div>
           </div>`;
-  }
+  };
 
   const renderCart = () => {
     if (!cart.length) {
@@ -210,14 +219,15 @@ const togleMenu = () =>{
     }
   };
   
-  const createProductData = (id, name,price, cardImg) => {
-    return { id, name,price, cardImg };
+  const createProductData = (id, name,price, image) => {
+    return { id, name,price, image};
   };
   
   const isExistingCartProduct = (product) => {
     return cart.find((item) => item.id === product.id);
   };
 
+  //Recorremos el carrito y cuando encuentra el producto el cual agregamos, sumamos una unidad.
   const addUnitToProduct = (product) => {
     cart = cart.map((cartProduct) => {
       return cartProduct.id === product.id
@@ -248,8 +258,8 @@ const togleMenu = () =>{
   
   const addProduct = (e) => {
     if (!e.target.classList.contains("btn-add")) return;
-    const { id, name, price, cardImg } = e.target.dataset;
-    const product = createProductData(id, name, price, cardImg);
+    const { id, name, price, image } = e.target.dataset;
+    const product = createProductData(id, name, price, image);
   
     if (isExistingCartProduct(product)) {
       // Añadir una unidad
@@ -330,22 +340,20 @@ const togleMenu = () =>{
     );
   };
 
+// //funcion para manejar el carrousel de iamgenes y los puntos
+//   punto.forEach((cadaPunto, i)=>{
+//        punto[i].addEventListener(`click`,()=>{
+//          let posicion = i
+//            let operacion = posicion * -25
 
-  punto.forEach((cadaPunto, i)=>{
-       punto[i].addEventListener(`click`,()=>{
-         let posicion = i
-           let operacion = posicion * -25
+//            grande.style.transform = `translateX(${operacion}%)`
 
-           grande.style.transform = `translateX(${operacion}%)`
-
-          punto.forEach((cadaPunto,i)=>{
-             punto[i].classList.remove(`activo`)
-           })
-          punto[i].classList.add(`activo`)
-
-
-       })
-   })
+//           punto.forEach((cadaPunto,i)=>{
+//              punto[i].classList.remove(`activo`)
+//            })
+//           punto[i].classList.add(`activo`)
+//        })
+//    });
 
 
   
@@ -373,3 +381,18 @@ const togleMenu = () =>{
     }
     
     init();
+
+    //funcion para manejar el carrousel de iamgenes y los puntos
+  punto.forEach((cadaPunto, i)=>{
+    punto[i].addEventListener(`click`,()=>{
+      let posicion = i
+        let operacion = posicion * -25
+
+        grande.style.transform = `translateX(${operacion}%)`
+
+       punto.forEach((cadaPunto,i)=>{
+          punto[i].classList.remove(`activo`)
+        })
+       punto[i].classList.add(`activo`)
+    })
+});

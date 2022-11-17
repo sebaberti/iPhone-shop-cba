@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&family=Oswald:wght@200;300;400;600&display=swap");
 
+:root {
+  /* colors */
+  --negro: #2a2a2a;
+  --blanco: aliceblue;
+  --negrooscuro: #02050e;
+  --red: #a10702;
+  --gris: #adb9c7;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -16,7 +25,7 @@ html {
 
 body {
   width: 100%;
-  background-color: aliceblue;
+  background-color: var(--blanco);
 }
 
 .section {
@@ -31,18 +40,18 @@ body {
 
 /* header */
 header {
-  background: aliceblue;
+  background: var(--blanco);
   width: 100%;
   position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 65px;
+  height: 70px;
   margin: 0 auto;
   z-index: 999;
   padding: 0px 30px 0px 15px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--gris);
 }
 
 .logo {
@@ -64,7 +73,7 @@ header {
 }
 
 .navbar-list a {
-  color: #2a2a2a;
+  color: var(--negro);
   font-size: 17px;
 }
 
@@ -78,18 +87,18 @@ header {
 }
 
 .cart-icon {
-  border: 1px solid #2a2a2a;
+  border: 1px solid var(--negro);
   padding: 12px 18px;
   font-weight: 600;
   border-radius: 10px;
   font-size: 17px;
-  color: #2a2a2a;
+  color: var(--negrooscuro);
   cursor: pointer;
 }
 
 .cart-icon:hover {
-  background-color: #2a2a2a;
-  color: aliceblue;
+  background-color: var(--negro);
+  color: var(--blanco);
   transition: all 0.3s linear;
 }
 
@@ -97,8 +106,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #2a2a2a;
-  border: 1px solid #2a2a2a;
+  color: var(--negro);
+  border: 1px solid var(--negro);
   font-size: 14px;
   padding: 10px 18px;
   border-radius: 10px;
@@ -106,8 +115,8 @@ header {
 }
 
 .register:hover {
-  background-color: #2a2a2a;
-  color: aliceblue;
+  background-color: var(--negro);
+  color: var(--blanco);
   transition: all 0.3s linear;
 }
 
@@ -119,7 +128,7 @@ header {
   content: "";
   height: 2px;
   width: 100%;
-  background: #2a2a2a;
+  background: var(--negro);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -158,8 +167,8 @@ header {
   top: 65px;
   right: 0;
   padding: 50px 30px;
-  background: red;
-  border-left: 1px solid aliceblue;
+  background: var(--negro);
+  border-left: 1px solid var(--blanco);
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -182,7 +191,7 @@ header {
 }
 
 .cart h2 {
-  color: aliceblue;
+  color: var(--blanco);
   font-size: 20px;
   font-weight: 600;
 }
@@ -192,9 +201,9 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background-color: #2323234e;
+  background-color: var(--negro);
   padding: 20px;
-  border: 1px solid blue;
+  border: 1px solid var(--blanco);
   border-radius: 10px;
 }
 
@@ -207,21 +216,13 @@ header {
   display: flex;
   flex-direction: column;
   min-width: 110px;
+  color: var(--blanco);
 }
 
 .item-title {
-  color: aliceblue;
+  color: var(--blanco);
   font-weight: 600;
   font-size: 14px;
-}
-
-.item-price {
-  background: linear-gradient(to right, #30cfd0, #c43ad6);
-  background-clip: text;
-  color: transparent;
-  -webkit-background-clip: text;
-  font-size: 16px;
-  font-weight: 800;
 }
 
 .quantity-handler {
@@ -230,21 +231,25 @@ header {
   align-items: center;
   padding: 2px 8px;
   border-radius: 5px;
-  color: aliceblue;
+  color: var(--blanco);
   font-weight: 400;
 }
 
 .item-quantity {
-  color: black;
+  color: var(--blanco);
+  font-weight: 400;
 }
 
 .up {
-  border: 1px solid blue;
+  border: 1px solid var(--blanco);
+  cursor: pointer;
 }
 
 .down {
-  background-color: blue;
-  border: 1px solid blue;
+  background-color: var(--blanco);
+  border: 1px solid var(--negro);
+  color: var(--negro);
+  cursor: pointer;
 }
 
 .divider {
@@ -261,12 +266,12 @@ header {
 }
 
 .cart-total p {
-  color: black;
+  color: var(--blanco);
   font-weight: 700;
 }
 
 .cart-total span {
-  color: black;
+  color: var(--blanco);
   font-weight: 400;
   font-size: 18px;
 }
@@ -278,7 +283,7 @@ header {
 }
 
 .empty-msg {
-  color: green;
+  color: var(--blanco);
   font-size: 14px;
 }
 
@@ -299,20 +304,43 @@ header {
     right: 5%;
     width: 90%;
     flex-direction: column;
-    border: 2px solid aliceblue;
+    border: 2px solid var(--gris);
     border-top: 0px;
     border-radius: 0px 0px 15px 15px;
     align-items: flex-start;
     padding: 45px 30px;
     gap: 25px;
     z-index: 2;
-    background: #3b5998;
+    background: var(--negro);
     display: none;
   }
 
+  .navbar-list .item-link::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: var(--blanco);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.15s linear;
+  }
+  .navbar-list .item-link:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+  }
+
   .navbar a {
-    color: aliceblue;
+    color: var(--blanco);
     font-size: 18px;
+  }
+
+  .register:hover {
+    background-color: var(--blanco);
+    color: var(--negro);
+    transition: all 0.3s linear;
   }
 
   /* muestro el icono de menu */
@@ -377,14 +405,14 @@ header {
 .punto {
   width: 7px;
   height: 7px;
-  background: grey;
+  background: var(--gris);
   opacity: 0.5;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .carrousel .punto.activo {
-  background: red;
+  background: var(--red);
 }
 
 @keyframes slide {
@@ -423,7 +451,7 @@ header {
   text-transform: uppercase;
   text-align: center;
   font-weight: 900;
-  color: #2a2a2a;
+  color: var(--negro);
   margin-bottom: 10px;
 }
 
@@ -442,8 +470,7 @@ header {
   flex-direction: row;
   background: lightblue;
   border-radius: 10px;
-  border: 1px dashed gray;
-
+  border: 1px dashed var(--gris);
   margin: 0 auto;
   background: rgba(27, 23, 24, 0.01);
   border-radius: 16px;
@@ -469,11 +496,11 @@ header {
 }
 
 .primary-button {
-  color: #fafafa;
+  color: var(--blanco);
   font-size: 18px;
   font-weight: 400;
   border: none;
-  background-color: #2a2a2a;
+  background-color: var(--red);
   padding: 10px 25px;
   border-radius: 5px;
   cursor: pointer;
@@ -531,14 +558,14 @@ header {
 }
 
 .category {
-  color: #2a2a2a;
+  color: var(--negro);
   font-size: 18px;
   font-weight: 400;
   border: none;
-  background-color: aliceblue;
+  background-color: var(--blanco);
   padding: 10px 25px;
   border-radius: 5px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid var(--negro);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.2s;
@@ -548,8 +575,8 @@ header {
 }
 
 .active {
-  background: #2a2a2a;
-  color: aliceblue;
+  background: var(--negro);
+  color: var(--blanco);
 }
 
 /* PRODUCTS */
@@ -578,8 +605,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: aliceblue;
-  border: 1px solid black;
+  background: var(--blanco);
+  border: 1px solid var(--negrooscuro);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -587,11 +614,11 @@ header {
   align-items: center;
   text-align: center;
   gap: 15px;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in;
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .card-img {
@@ -624,11 +651,11 @@ header {
 }
 
 .card-btn {
-  color: #fafafa;
+  color: var(--blanco);
   font-size: 18px;
   font-weight: 400;
   border: none;
-  background-color: #2a2a2a;
+  background-color: var(--negro);
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
@@ -647,11 +674,11 @@ header {
 }
 
 .btn-load {
-  color: #fafafa;
+  color: var(--blanco);
   font-size: 18px;
   font-weight: 400;
   border: none;
-  background-color: red;
+  background-color: var(--red);
   padding: 10px 25px;
   border-radius: 5px;
   cursor: pointer;
@@ -660,7 +687,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  order: 2;
+  order: 3;
+  margin: 15px auto 0px auto;
 }
 
 .btn-load:hover {
@@ -673,7 +701,7 @@ header {
   padding: 70px 0;
   width: 100%;
   margin: 0 auto;
-  background: #2a2a2a;
+  background: var(--negro);
 }
 .contact-container h2 {
   font-size: 30px;
@@ -690,7 +718,7 @@ header {
   height: 100%;
   flex-wrap: wrap;
   max-width: 1300px;
-  background-color: red;
+
   margin: 0 auto;
 }
 
@@ -718,7 +746,7 @@ form {
 }
 
 input {
-  color: #2a2a2a;
+  color: var(--negro);
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -742,11 +770,11 @@ textarea {
 }
 
 .contact-btn {
-  color: #fafafa;
+  color: var(--blanco);
   font-size: 18px;
   font-weight: 400;
   border: none;
-  background-color: red;
+  background-color: var(--red);
   padding: 10px 25px;
   border-radius: 5px;
   cursor: pointer;
@@ -790,12 +818,12 @@ textarea {
 #redes {
   width: 100%;
   margin: 0 auto;
-  background: #2a2a2a;
+  background: var(--negro);
 }
 .redes {
   width: 80%;
-  background: #2a2a2a;
-  border-top: 0.1rem solid gray;
+  background: var(--negro);
+  border-top: 0.1rem solid var(--gris);
   height: 70px;
   display: flex;
   justify-content: center;
@@ -807,7 +835,7 @@ textarea {
 .fa-brands.fa-instagram,
 .fa-brands.fa-facebook,
 .fa-brands.fa-twitter {
-  color: black;
+  color: var(--negrooscuro);
   font-size: 30px;
 }
 
@@ -833,24 +861,24 @@ textarea {
 #footer {
   width: 100%;
   margin: 0 auto;
-  background: #2a2a2a;
+  background: var(--negro);
 }
 
 .footer-container {
-  border-top: 0.1rem solid gray;
+  border-top: 0.1rem solid var(--gris);
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100px;
   width: 80%;
-  color: gray;
+  color: var(--gris);
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .footer-container a {
-  color: aliceblue;
+  color: var(--blanco);
 }
 
 @media (min-width: 300px) and (max-width: 901px) {
@@ -861,14 +889,8 @@ textarea {
 }
 
 .disabled {
-  background-color: var(--text-gray);
-  color: white;
-  cursor: not-allowed;
-  border: none;
-}
-.disabled:hover {
-  background-color: var(--text-gray);
-  color: white;
+  background-color: gray;
+  color: var(--negro);
   cursor: not-allowed;
   border: none;
 }
@@ -878,7 +900,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-white);
+  color: var(--blanco);
   background-color: green;
   position: fixed;
   bottom: 0;
