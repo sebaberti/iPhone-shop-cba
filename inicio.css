@@ -28,6 +28,12 @@ body {
   height: 100%;
 }
 
+.navbar{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 header {
   background: var(--blanco);
   width: 100%;
@@ -45,16 +51,21 @@ header {
 
 .logo {
   height: 100%;
+ 
 }
 
 .navbar-list {
   display: flex;
   align-items: center;
   justify-content: center;
+ 
 }
 .redes {
   display: flex;
   gap: 20px;
+  justify-content: center;
+  align-items: center;
+
 }
 .navbar-list a {
   color: black;

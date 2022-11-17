@@ -32,7 +32,7 @@ const createHtml = (product)=>{
     <div class="card-img"><img src="${image}" alt="user"/></div>
     <div class="card-info">
       <h3>${name}</h3>
-      <span>$${price}</span>
+      <span>${price} USD $</span>
       <button class="card-btn btn-add"
       data-id="${id}"
       data-name="${name}"
@@ -185,7 +185,7 @@ const togleMenu = () =>{
             <div class="img-cart"><img src=${image} alt="user"/></div>
             <div class="item-info">
               <h3>${name}</h3>
-              <span>$${price}</span>
+              <span>${price} USD $</span>
             </div>
             <div class="item-handler">
       <span class="quantity-handler down" data-id=${id}>-</span>

@@ -337,10 +337,14 @@ header {
     font-size: 18px;
   }
 
+  .register{
+    border: 1px solid var(--blanco);
+  }
   .register:hover {
     background-color: var(--blanco);
     color: var(--negro);
     transition: all 0.3s linear;
+  
   }
 
   /* muestro el icono de menu */
@@ -708,6 +712,7 @@ header {
   text-transform: uppercase;
   text-align: center;
   font-weight: 900;
+  color: var(--blanco);
 }
 
 .contact-container {
