@@ -10,10 +10,12 @@
     />
     <link rel="stylesheet" href="./assets/style.css" />
     <link rel="icon" href="./assets/img/hero/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
     <title>iPhone shop cba</title>
   </head>
   <body>
-    <a href=""> </a>
+    
     <header>
       <div class="logo">
         <a href="./index.html"><img src="./assets/img/hero/logo.png" alt="logo" class="logo" /></a>
@@ -56,39 +58,25 @@
     <main>
       <!-- CARROUSEL -->
       <section id="hero">
-        <div class="carrousel">
-          <div class="carrousel-img">
-            <img
-              src="./assets/img/hero/slider1.jpg"
-              alt="imagen 1"
-              class="imgg"
-            />
-
-            <img
-              src="./assets/img/hero/slider2.webp"
-              alt="imagen 2"
-              class="imgg"
-            />
-
-            <img
-              src="./assets/img/hero/slider3.jpg"
-              alt="imagen 3"
-              class="imgg"
-            />
-            <img
-              src="./assets/img/hero/slider4.webp"
-              alt="imagen 4"
-              class="imgg"
-            />
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img
+                      src="./assets/img/hero/slider1.jpg"
+                      alt=""></div>
+              <div class="swiper-slide"><img
+                      src="./assets/img/hero/slider2.webp"
+                      alt=""></div>
+              <div class="swiper-slide"><img
+                      src="./assets/img/hero/slider3.jpg"
+                      alt=""></div>
+              <div class="swiper-slide"><img
+                      src="./assets/img/hero/slider4.webp"
+                      alt=""></div>
           </div>
-
-          <ul class="container-puntos">
-            <li class="punto activo"></li>
-            <li class="punto"></li>
-            <li class="punto"></li>
-            <li class="punto"></li>
-          </ul>
-        </div>
+         <div class="swiper-pagination"></div> 
+        
+      </div>
+       
       </section>
 
       <!-- ABOUT US -->
@@ -215,13 +203,15 @@
       <section id="footer">
 <div class="footer-container">
   <p class="footer-p">
-  2020 © iPhone shop cba | Desarrollado por <a href="https://www.linkedin.com/in/sebastian-berti-583147213/">Sebastian Berti</a></p>
+  2022 © iPhone shop cba | Desarrollado por <a href="https://www.linkedin.com/in/sebastian-berti-583147213/">Sebastian Berti</a></p>
 </div>
       </section>
       </footer>
    
     <div class="add-modal"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./assets/data.js"></script>
     <script src="./assets/index.js"></script>
+   <script src="./assets/slider.js"></script>
     
 </html>
