@@ -438,6 +438,8 @@ header {
 #about-us {
   padding: 70px 0;
   max-width: 1300px;
+  margin: 0 auto;
+ 
 }
 .description-container {
   display: flex;
@@ -448,7 +450,8 @@ header {
   max-width: 1300px;
   width: 85%;
   flex-direction: row;
-  background: lightblue;
+  
+  
   border-radius: 10px;
   border: 1px dashed var(--gris);
   margin: 0 auto;
@@ -458,6 +461,7 @@ header {
   backdrop-filter: blur(5.4px);
   -webkit-backdrop-filter: blur(5.4px);
   border: 1px solid rgba(200, 117, 51, 0.2);
+
 }
 
 .text-container {
